@@ -58,7 +58,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name>fernandofuentesfullstack/${project.artifactId}</name>
+						<name>fernandofuentesfullstack/${project.artifactId}:${project.version}</name>
 					</image>
 				</configuration>
 			</plugin>
