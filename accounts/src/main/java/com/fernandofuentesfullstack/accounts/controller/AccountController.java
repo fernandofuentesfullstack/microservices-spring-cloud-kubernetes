@@ -38,7 +38,7 @@ public class AccountController {
         }
     }
 
-    @GetMapping("/account/properties")
+    @GetMapping("/accounts/properties")
     public String getPropertyDetails() throws JsonProcessingException {
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         Properties properties = new Properties(accountsServiceConfig.getMsg(), accountsServiceConfig.getBuildVersion(),
