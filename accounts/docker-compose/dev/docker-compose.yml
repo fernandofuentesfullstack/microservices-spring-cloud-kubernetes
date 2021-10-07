@@ -1,0 +1,70 @@
+version: "3.8"
+
+services:
+  configserver:
+    image: fernandofuentesfullstack/configserver:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8071:8071"
+    networks:
+      - fernandofuentesfullstack-network
+
+  accounts:
+    image: fernandofuentesfullstack/accounts:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - fernandofuentesfullstack-network
+    depends_on:
+      - configserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071
+
+  loans:
+    image: fernandofuentesfullstack/loans:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8090:8090"
+    networks:
+      - fernandofuentesfullstack-network
+    depends_on:
+      - configserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071
+
+  cards:
+    image: fernandofuentesfullstack/cards:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "9000:9000"
+    networks:
+      - fernandofuentesfullstack-network
+    depends_on:
+      - configserver
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071
+
+networks:
+  fernandofuentesfullstack-network:
