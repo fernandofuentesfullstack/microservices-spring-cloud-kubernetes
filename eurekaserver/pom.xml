@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.fernandofuentesfullstack</groupId>
 	<artifactId>eurekaserver</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>eureka-server</name>
 	<description>Service Discovery for Bank Microservices</description>
 	<properties>

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.fernandofuentesfullstack</groupId>
 	<artifactId>configserver</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>configserver</name>
 	<description>Configuration Server for Bank Microservices</description>
 	<properties>

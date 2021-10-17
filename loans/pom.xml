@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.fernandofuentesfullstack</groupId>
 	<artifactId>loans</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>loans</name>
 	<description>Microservice for Loans</description>
 	<properties>
