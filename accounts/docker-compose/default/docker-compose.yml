@@ -44,7 +44,7 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071
-      SPRING_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
 
   loans:
     image: fernandofuentesfullstack/loans:0.0.2-SNAPSHOT
@@ -64,7 +64,7 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071
-      SPRING_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
 
   cards:
     image: fernandofuentesfullstack/cards:0.0.2-SNAPSHOT
@@ -84,7 +84,7 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071
-      SPRING_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
 
 networks:
   fernandofuentesfullstack-network:

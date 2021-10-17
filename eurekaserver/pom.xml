@@ -11,7 +11,7 @@
 	<groupId>com.fernandofuentesfullstack</groupId>
 	<artifactId>eurekaserver</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
-	<name>eureka-server</name>
+	<name>eurekaserver</name>
 	<description>Service Discovery for Bank Microservices</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
