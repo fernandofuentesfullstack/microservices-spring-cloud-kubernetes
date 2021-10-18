@@ -13,6 +13,7 @@ import com.fernandofuentesfullstack.accounts.model.dto.Loan;
 import com.fernandofuentesfullstack.accounts.repository.AccountRepository;
 import com.fernandofuentesfullstack.accounts.service.client.CardsFeignClient;
 import com.fernandofuentesfullstack.accounts.service.client.LoansFeignClient;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -61,6 +62,7 @@ public class AccountController {
     }
 
     @PostMapping("/myCustomerDetails")
+    @CircuitBreaker(name = "detailsForCustomerSupportApp")
     public CustomerDetails myCustomerDetails(@RequestBody Customer customer) {
 
         Account account = accountRepository.findByCustomerId(customer.getCustomerId());
